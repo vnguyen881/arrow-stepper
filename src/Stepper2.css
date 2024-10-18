@@ -1,0 +1,65 @@
+
+
+.steps-container {
+  margin: 20px 60px;
+}
+
+.steps {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  width: 100px;
+  margin: 5px 1px 0 0;
+  text-indent: 35px;
+  position: relative;
+}
+
+.steps:before {
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: -2px;
+  border-style: solid;
+  border-width: 15px 0 15px 15px;
+  border-color: transparent transparent transparent #fff;
+  z-index: 0;
+}
+
+.steps:first-child:before {
+  border-color: transparent;
+}
+
+.span:after {
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: -15px;
+  border-style: solid;
+  border-width: 15px 0 15px 15px;
+  border-color: transparent transparent transparent #ccc;
+  z-index: 10;
+}
+
+.steps:active {
+  background: orange;
+  z-index: 100;
+}
+
+.steps.active a:after {
+  border-left-color: orange;
+}
+
+.span {
+  display: block;
+  background: #ccc;
+}
+
+.span:hover {
+  background: pink;
+}
+
+.span:hover:after {
+  border-color: transparent transparent transparent pink; 
+}
