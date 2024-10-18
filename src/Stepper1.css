@@ -1,65 +1,151 @@
-
-
-ul {
-  margin: 20px 60px;
+.step-container {
+  width: 100%;
+  display: 'flex';
 }
-
-ul li {
-  display: inline-block;
-  height: 30px;
-  line-height: 30px;
-  width: 100px;
-  margin: 5px 1px 0 0;
-  text-indent: 35px;
+.steps {
+  height: 40px;
+  /* width: 150px; */
+  text-align: center;
+  line-height: 40px;
   position: relative;
+  margin: 10px 0px 10px 20px;
+  display: inline-block;
+  width:45%
+  /* width: calc(100%/2.5); */
 }
-
-ul li:before {
-  content: " ";
-  height: 0;
-  width: 0;
+.steps span {
+  position: relative;
+  z-index: 2;
+}
+.steps:before,
+.steps:after {
+  content: '';
   position: absolute;
-  left: -2px;
-  border-style: solid;
-  border-width: 15px 0 15px 15px;
-  border-color: transparent transparent transparent #fff;
-  z-index: 0;
+  left: 0px;
+  width: 150px;
+  height: 25px;
 }
+.steps:before {
+  top: 0px;
+  /* border-top: 2px solid blue;
+  border-right: 2px solid blue;
+  border-left: 2px solid blue; */
+  background: darkblue;
+  -moz-transform: skew(30deg);
+  -webkit-transform: skew(30deg);
+  transform: skew(30deg);
+}
+.steps:after {
+  bottom: 0px;
+  /* border-left: 2px solid blue;
+  border-right: 2px solid blue;
+  border-bottom: 2px solid blue; */
+  background: darkblue;
+  -moz-transform: skew(-30deg);
+  -webkit-transform: skew(-30deg);
+  transform: skew(-30deg);
+}
+.steps:first-child:before,
+.steps:first-child:after {
+  border-left: none;
 
-ul li:first-child:before {
-  border-color: transparent;
 }
+.steps:last-child:before,
+.steps:last-child:after {
+  border-right: none;
+}
+.steps:last-child {
+  background: lightblue;
+  /* border-right: 2px solid blue;
+  border-top: 2px solid blue;
+  border-bottom: 2px solid blue; */
+  margin-left: 38px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.steps:first-child {
+  background: darkblue;
+  color: white;
+  /* border-left: 2px solid blue;
+  border-top: 2px solid blue;
+  border-bottom: 2px solid blue; */
+  /* margin-right: 8px; */
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+.steps:first-child:before,
+.steps:first-child:after {
+  left: 50px;
+}
+.steps:last-child:before,
+.steps:last-child:after {
+  left: -50px;
+}
+/* Hover Styles */
 
-ul li a:after {
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  right: -15px;
-  border-style: solid;
-  border-width: 15px 0 15px 15px;
-  border-color: transparent transparent transparent #ccc;
-  z-index: 10;
+/* .steps:first-child:hover,
+.steps:last-child:hover,
+.steps:hover:before,
+.steps:hover:after {
+  background: lightgreen;
+} */
+/* .steps:first-child:hover {
+  border-left: 2px solid green;
+} */
+/* .steps:last-child:hover {
+  border-right: 2px solid green;
+} */
+/* .steps:hover:before {
+  border-top: 2px solid green;
+  border-right: 2px solid green;
+  border-left: 2px solid green;
+} */
+/* .steps:hover:after {
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+  border-bottom: 2px solid green;
+} */
+/* .steps:first-child:hover,
+.steps:last-child:hover {
+  border-top: 2px solid green;
+  border-bottom: 2px solid green;
 }
-
-ul li.active a {
-  background: orange;
-  z-index: 100;
+.steps:first-child:hover:before,
+.steps:first-child:hover:after {
+  border-left: none;
 }
-
-ul li.active a:after {
-  border-left-color: orange;
+.steps:last-child:hover:before,
+.steps:last-child:hover:after {
+  border-right: none;
+} */
+/* Active Styles */
+/* .active:not(:first-child) {
+  background: #D3D3D3;
+} */
+.active:first-child,
+.active:last-child,
+.active:before,
+.active:after {
+  background: #D3D3D3;
 }
-
-ul li a {
-  display: block;
-  background: #ccc;
+/* .active:first-child {
+  border-left: 2px solid red;
 }
-
-ul li a:hover {
-  background: pink;
+.active:last-child {
+  border-right: 2px solid red;
 }
-
-ul li a:hover:after {
-  border-color: transparent transparent transparent pink; 
-}
+.active:before {
+  border-top: 2px solid red;
+  border-right: 2px solid red;
+  border-left: 2px solid red;
+} */
+/* .active:after {
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+  border-bottom: 2px solid red;
+} */
+/* .active:first-child,
+.active:last-child {
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+} */
