@@ -2,6 +2,7 @@
   width: 100%;
   display: 'flex';
 }
+
 .steps {
   height: 30px;
   text-align: center;
@@ -11,51 +12,42 @@
   display: inline-block;
   width: calc((100% - 60px)/2)
 }
-/* .steps span {
-  position: relative;
-  z-index: 2;
-} */
+
+/* Divide step into 2 equally half top and bottom with each half has height of 15px */
 .steps:before,
 .steps:after {
   content: '';
   position: absolute;
   left: 0px;
-  width: 150px;
+  width: calc((100% - 60px)/2);
   height: 15px;
 }
+
+/* Create arrow shape for half top */
 .steps:before {
   top: 0px;
-  /* border-top: 2px solid blue;
-  border-right: 2px solid blue;
-  border-left: 2px solid blue; */
-  /* background: #D3D3D3; */
   -moz-transform: skew(30deg);
   -webkit-transform: skew(30deg);
   transform: skew(30deg);
 }
+
+/* Create arrow shape for half bottom */
 .steps:after {
   bottom: 0px;
-  /* border-left: 2px solid blue;
-  border-right: 2px solid blue;
-  border-bottom: 2px solid blue; */
-  /* background: #D3D3D3; */
   -moz-transform: skew(-30deg);
   -webkit-transform: skew(-30deg);
   transform: skew(-30deg);
 }
 
-.steps:first-child:before,
-.steps:first-child:after {
-  border-left: none;
-  /* background: #022748; */
+/* Defind default css style for first step */
+.steps:first-child {
+  background: #022748;
+  color: white;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
 
-.steps:last-child::before,
-.steps:last-child::after {
-  border-right: none;
-  margin-left: 00px;
-  background: #D3D3D3 !important;
-}
+/* Defind default css style for last step */
 .steps:last-child {
   background: #D3D3D3;
   color: black;
@@ -64,153 +56,30 @@
   border-bottom-right-radius: 50px;
 }
 
-.steps:first-child {
-  background: #022748;
-  color: white;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
+/* Define default css background for half top and bottom of last step child */
+.steps:last-child::before,
+.steps:last-child::after {
+  background: #D3D3D3 !important;
 }
-.steps:first-child:before,
-.steps:first-child:after {
-  left: 50px;
-}
+
+/* Create white arrow symble with left border of last step child */
 .steps:last-child:before,
 .steps:last-child:after {
   left: -50px;
   border-left-style: solid;
-  border-width: 3px;
+  border-width: 4px;
   border-color: white;
 }
 
-/* .steps:last-child::before,
-.steps:last-child::after, */
+/* Override css background style of steps:last-child::before, and steps:last-child:after in active state */
+.active:last-child::before,
+.active:last-child::after {
+  background: #022748 !important;
+}
+
+/* Override css background and color style of class steps when in active state */
 .active:last-child,
 .steps {
   background: #022748;
   color: white;
 }
-
-/* .active,
-.steps:last-child::before,
-.steps:last-child::after {
-  background: #022748;
-} */
-
-/* .steps:last-child::before .active:last-child {
-  background: #022748 !important;
-} */
-/* /////////////////// */
-
-
-/* .active:last-child,
-.steps:last-child::before {
-  border-top:1px solid #022748
-}
-
-.active:last-child,
-.steps:last-child::after {
-  border-bottom:1px solid #022748
-} */
-/* .steps:last-child::before,
-.steps:last-child::after,
-.active:last-child:before,
-.active:last-child:after {
-  left: -50px;
-  border-top-style: solid;
-  border-width: 3px;
-  background: #022748 !important;
-  border-color: #022748;
-  
-} */
-
-/* Hover Styles */
-/* .steps:first-child:before + .active:last-child:before,
-.steps:last-child:after + .active:last-child:after{
-  border-left: none;
-  background: white;
-} */
-/* .steps:last-child::before,
-.steps:last-child::after,
-.active:last-child:before,
-.active:last-child:after{
-  border-left: none;
-  background: white;
-} */
-/* .active:first-child {
-  background: #022748;
-  color: white
-}
-.active:last-child {
-  background: white;
-  color: white
-} */
-/* .steps:first-child:hover,
-.steps:last-child:hover,
-.steps:hover:before,
-.steps:hover:after {
-  background: lightgreen;
-} */
-/* .steps:first-child:hover {
-  border-left: 2px solid green;
-} */
-/* .steps:last-child:hover {
-  border-right: 2px solid green;
-} */
-/* .steps:hover:before {
-  border-top: 2px solid green;
-  border-right: 2px solid green;
-  border-left: 2px solid green;
-} */
-/* .steps:hover:after {
-  border-left: 2px solid green;
-  border-right: 2px solid green;
-  border-bottom: 2px solid green;
-} */
-/* .steps:first-child:hover,
-.steps:last-child:hover {
-  border-top: 2px solid green;
-  border-bottom: 2px solid green;
-}
-.steps:first-child:hover:before,
-.steps:first-child:hover:after {
-  border-left: none;
-}
-.steps:last-child:hover:before,
-.steps:last-child:hover:after {
-  border-right: none;
-} */
-/* Active Styles */
-/* .active:not(:first-child) {
-  background: #D3D3D3;
-} */
-
-/* .active:last-child,
-.steps:last-child:before,
-.active:last-child::after {
-  background: #022748;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #022748;
-  color: white
-} */
-/* .active:first-child {
-  border-left: 2px solid red;
-}
-.active:last-child {
-  border-right: 2px solid red;
-}
-.active:before {
-  border-top: 2px solid red;
-  border-right: 2px solid red;
-  border-left: 2px solid red;
-} */
-/* .active:after {
-  border-left: 2px solid red;
-  border-right: 2px solid red;
-  border-bottom: 2px solid red;
-} */
-/* .active:first-child,
-.active:last-child {
-  border-top: 2px solid red;
-  border-bottom: 2px solid red;
-} */
