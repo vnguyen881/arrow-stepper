@@ -10,9 +10,9 @@ const Stepper = ({ steps, currentStep }) => {
         return(
         <li
           key={index}
-          className={`steps ${index === currentStep ? 'active' : ''}`}
+          className={`${index === currentStep ? 'active' : ''} steps `}
         >
-          <span className={`span `}>{step}</span>
+          <span className={`span`}>{step}</span>
         </li>
         )
       })}
