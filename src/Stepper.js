@@ -6,14 +6,13 @@ const Stepper = ({ steps, currentStep }) => {
   return (
     <ul className="stepper-container">
       {steps.map((step, index) => {
+        console.log('index ', index)
         return(
         <li
           key={index}
-          className={`steps ${index < currentStep ? 'completed' : ''} ${
-            index === currentStep ? 'active' : ''
-          }`}
+          className={`steps ${index === currentStep ? 'active' : ''}`}
         >
-          <span className="span">{step}</span>
+          <span className={`span `}>{step}</span>
         </li>
         )
       })}

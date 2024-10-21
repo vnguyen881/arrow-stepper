@@ -3,7 +3,8 @@ import Stepper from './Stepper';
 
 const LogInventory = () => {
   const steps = ['Log Inventory', 'Review'];
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
+  console.log('current step ', currentStep)
   return (
     <div>
       <h1>Manually log inventory</h1>

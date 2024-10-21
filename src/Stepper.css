@@ -11,10 +11,10 @@
   display: inline-block;
   width: calc((100% - 60px)/2)
 }
-.steps span {
+/* .steps span {
   position: relative;
   z-index: 2;
-}
+} */
 .steps:before,
 .steps:after {
   content: '';
@@ -28,7 +28,7 @@
   /* border-top: 2px solid blue;
   border-right: 2px solid blue;
   border-left: 2px solid blue; */
-  background: #022748;
+  background: #D3D3D3;
   -moz-transform: skew(30deg);
   -webkit-transform: skew(30deg);
   transform: skew(30deg);
@@ -38,7 +38,7 @@
   /* border-left: 2px solid blue;
   border-right: 2px solid blue;
   border-bottom: 2px solid blue; */
-  background: #022748;
+  background: #D3D3D3;
   -moz-transform: skew(-30deg);
   -webkit-transform: skew(-30deg);
   transform: skew(-30deg);
@@ -46,8 +46,9 @@
 .steps:first-child:before,
 .steps:first-child:after {
   border-left: none;
-
+  background: #022748;
 }
+
 .steps:last-child:before,
 .steps:last-child:after {
   border-right: none;
@@ -55,7 +56,7 @@
   
 }
 .steps:last-child {
-  background: lightblue;
+  background: #D3D3D3;
   /* border-right: 2px solid blue;
   border-top: 2px solid blue;
   border-bottom: 2px solid blue; */
@@ -64,6 +65,17 @@
   border-bottom-right-radius: 50px;
   
 }
+
+/* .active:last-child {
+  background: #D3D3D3;
+  border-right: 2px solid blue;
+  border-top: 2px solid blue;
+  border-bottom: 2px solid blue;
+  margin-left: 38px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+} */
+
 .steps:first-child {
   background: #022748;
   color: white;
@@ -86,8 +98,67 @@
   border-width: 3px;
   border-color: white;
 }
-/* Hover Styles */
 
+.active:last-child {
+  background: white;
+  left: -50px;
+  border: solid 1px#022748;
+  /* left: 0px; */
+}
+/* /////////////////// */
+.activelast-child,
+.steps:last-child::before,
+.steps:last-child::after {
+  content: '';
+  position: absolute;
+  left: -50px;
+  width: 150px;
+  height: 15px;
+  /* border-left: 1px solid red; */
+}
+
+.active:last-child,
+.steps:last-child::before {
+  border-top:1px solid #022748
+}
+
+.active:last-child,
+.steps:last-child::after {
+  border-bottom:1px solid #022748
+}
+/* .steps:last-child::before,
+.steps:last-child::after,
+.active:last-child:before,
+.active:last-child:after {
+  left: -50px;
+  border-top-style: solid;
+  border-width: 3px;
+  background: white !important;
+  border-color: #022748;
+  
+} */
+
+/* Hover Styles */
+/* .steps:first-child:before + .active:last-child:before,
+.steps:last-child:after + .active:last-child:after{
+  border-left: none;
+  background: white;
+} */
+/* .steps:last-child::before,
+.steps:last-child::after,
+.active:last-child:before,
+.active:last-child:after{
+  border-left: none;
+  background: white;
+} */
+/* .active:first-child {
+  background: #022748;
+  color: white
+}
+.active:last-child {
+  background: white;
+  color: white
+} */
 /* .steps:first-child:hover,
 .steps:last-child:hover,
 .steps:hover:before,
@@ -127,11 +198,15 @@
 /* .active:not(:first-child) {
   background: #D3D3D3;
 } */
-.active:first-child,
+
 .active:last-child,
 .active:before,
 .active:after {
-  background: #D3D3D3;
+  /* background: #D3D3D3; */
+  background: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #022748;
 }
 /* .active:first-child {
   border-left: 2px solid red;
