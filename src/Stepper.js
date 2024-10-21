@@ -1,12 +1,11 @@
 import React from 'react';
+// import './Stepper4.css'; // Import the above CSS
 import './Stepper.css'; // Import the above CSS
 
 const Stepper = ({ steps, currentStep }) => {
   return (
-    <ul className="steps-container">
+    <ul className="stepper-container">
       {steps.map((step, index) => {
-        console.log('currentStep ', currentStep)
-        console.log('step ', step)
         return(
         <li
           key={index}
